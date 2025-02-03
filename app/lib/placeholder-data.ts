@@ -46,6 +46,12 @@ const customers = [
     email: 'balazs@orban.com',
     image_url: '/customers/balazs-orban.png',
   },
+  {
+    id: '25D3778E-6F64-467D-B706-80209D3D9255',
+    name: 'Đào Văn Công',
+    email: 'Daovancong2001@gmail.com',
+    image_url: '/customers/daniel-keller.png',
+  }
 ];
 
 const invoices = [

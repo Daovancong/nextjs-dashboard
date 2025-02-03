@@ -12,7 +12,6 @@ export default async function InvoicesTable({
   currentPage: number;
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
-
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
@@ -31,7 +30,7 @@ export default async function InvoicesTable({
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
-                        alt={`${invoice.name}'s profile picture`}
+                        alt={`${invoice.name}'s profile picture`} // Delete this line
                       />
                       <p>{invoice.name}</p>
                     </div>
@@ -46,7 +45,7 @@ export default async function InvoicesTable({
                     </p>
                     <p>{formatDateToLocal(invoice.date)}</p>
                   </div>
-                  <div className="flex justify-end gap-2">
+                  <div className="flex justify-end gap-2 whitespace-nowrap px-6 py-4 text-sm">
                     <UpdateInvoice id={invoice.id} />
                     <DeleteInvoice id={invoice.id} />
                   </div>
@@ -107,11 +106,9 @@ export default async function InvoicesTable({
                   <td className="whitespace-nowrap px-3 py-3">
                     <InvoiceStatus status={invoice.status} />
                   </td>
-                  <td className="whitespace-nowrap py-3 pl-6 pr-3">
-                    <div className="flex justify-end gap-3">
-                      <UpdateInvoice id={invoice.id} />
-                      <DeleteInvoice id={invoice.id} />
-                    </div>
+                  <td className="flex justify-end gap-2 whitespace-nowrap px-6 py-4 text-sm">
+                    <UpdateInvoice id={invoice.id} />
+                    <DeleteInvoice id={invoice.id} />
                   </td>
                 </tr>
               ))}
@@ -119,6 +116,6 @@ export default async function InvoicesTable({
           </table>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

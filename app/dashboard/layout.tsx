@@ -1,6 +1,7 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
 import { inter } from '@/app/ui/fonts';
 
+export const experimental_ppr = true;
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <div className={`${inter.className} antialiased flex h-screen flex-col md:flex-row md:overflow-hidden`}>
